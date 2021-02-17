@@ -1,0 +1,112 @@
+@media screen and (max-width: 1200px) {
+    .row {
+        width: 90%;
+    }
+    #hero {
+        height: 75vh;
+    }
+}
+@media screen and (max-width: 1024px) {
+    .hero-text-box {
+        width: 85%;
+    }
+    .grid-team-items {
+        padding: 0;
+    }
+    .grid-portfolio-items img {
+        width: 100%;
+    }
+    html,
+    body {
+        font-size: 57.5%;
+    }
+    .nested-grid-testimonial-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .grid-testiomial-container p {
+        width: 95%;
+        margin: auto;
+    }
+    .contact-form {
+        width: 95%;
+    }
+}
+@media screen and (max-width: 980px) {
+    .mobile-menu span {
+        display: block;
+    }
+    .main-nav {
+        display: none;
+    }
+    .grid-services-container,
+    .grid-team-container,
+    .grid-skill-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    .grid-team-container {
+        grid-gap: 2rem;
+    }
+    .services-icon {
+        margin-bottom: 1rem;
+    }
+    #testimonial h4 {
+        margin-top: 1rem;
+    }
+    html,
+    body {
+        font-size: 62.5%;
+    }
+    .hero-text-box h1 {
+        font-size: 3.5rem;
+    }
+    #services .section-title {
+        margin-bottom: 1rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    #hero {
+        height: 70vh;
+    }
+    h1 {
+        font-size: 3rem;
+    }
+    h2 {
+        font-size: 2.8rem;
+    }
+    h4 {
+        font-size: 2rem;
+    }
+    .title-description {
+        width: 90%;
+    }
+    footer ul li {
+        font-size: 2.2rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    #hero {
+        height: 60vh;
+    }
+    .grid-services-container,
+    .grid-team-container,
+    .grid-skill-container,
+    .grid-portfolio-container,
+    .grid-testiomial-container,
+    .grid-form-container {
+        grid-template-columns: 1fr;
+    }
+    .grid-form-container {
+        grid-gap: 0;
+    }
+    html,
+    body {
+        font-size: 57.5%;
+    }
+    .hero-text-box h1 {
+        font-size: 2.9rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+    }
+}

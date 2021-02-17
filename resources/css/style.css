@@ -1,0 +1,563 @@
+/*==========================
+    Template Name: Cuda-Portfolio Tamplate
+    Template URI:
+    Description: An awesome single page portfolio template
+    Author: Aba Hayat
+    Support: abahayat48@gmail.com
+    Author URI: abahayat.com
+==========================*/
+
+/*==========================
+    CSS INDEX
+    =========
+    1. COMMON CSS
+    2. HERO
+    3. SERVICES
+    4. TEAM
+    5. SKILL
+    6. PORTFOLIO
+    7. TESTIMONIAL
+    8. CONTACT
+    9. FOOTER
+==========================*/
+
+/*==========================
+    1. COMMON CSS
+==========================*/
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background: #fff;
+    font-size: 62.5%;
+    font-weight: 400;
+    line-height: 1.3;
+    scroll-behavior: smooth;
+    text-rendering: optimizeLegibility;
+    font-family: 'Titillium Web', sans-serif;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+h1 {
+    color: #fff;
+    font-size: 4.2rem;
+    margin: 0;
+}
+h2, h3, h4 {
+    font-weight: 600;
+}
+h2 {
+    color: #fff;
+    font-size: 4rem;
+    letter-spacing: .2rem;
+}
+h2::after {
+    content: '';
+    display: block;
+    height: .5rem;
+    background: #fff;
+    width: 8.5rem;
+    margin: 1.8rem auto;
+    border-radius: .3rem;
+}
+h4 {
+    font-size: 2.4rem;
+    text-transform: uppercase;
+    margin: 2rem 0;
+}
+ul li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+p {
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+/*-- REUSEABLE COMPONENT --*/
+.row {
+    max-width: 118rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.btn:link,
+.btn:visited,
+.btn {
+    display: inline-block;
+    width: 25rem;
+    padding: 1.5rem 0;
+    margin-top: 4.5rem;
+    color: #fff;
+    font-size: 1.8rem;
+    text-align: center;
+    background: transparent;
+    border-bottom: .3rem solid transparent;
+    border-radius: .3rem;
+    text-transform: uppercase;
+}
+.btn:hover {
+    cursor: pointer;
+}
+section {
+    padding: 8rem 0;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 4.5rem;
+}
+.title-description {
+    font-size: 1.8rem;
+    line-height: 1.5;
+    width: 55%;
+    margin: auto;
+}
+
+/*==========================
+    2. HERO
+==========================*/
+#hero {
+    height: 85vh;
+    position: relative;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(135, 80, 156, 0.9)), to(rgba(135, 80, 156, 0.9))),url(img/hero-bg.jpg) no-repeat center / cover fixed;
+    background: linear-gradient(rgba(135, 80, 156, 0.9), rgba(135, 80, 156, 0.9)),url(img/hero-bg.jpg) no-repeat center / cover fixed;
+}
+.clear-fix::after {
+    content: '';
+    display: table;
+    clear: both;
+    height: 0;
+    visibility: hidden;
+}
+.logo {
+    height: 3.5rem;
+    width: auto;
+    margin-top: 3.5rem;
+    float: left;
+}
+.main-nav {
+    margin-top: 4rem;
+    float: right;
+}
+.main-nav li {
+    display: inline-block;
+    margin: 0 .3rem;
+}
+.main-nav li a:link,
+.main-nav li a:visited {
+    color: #fff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    padding: .3rem 1.5rem;
+    display: inline-block;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.main-nav li:hover a:link,
+.main-nav li:hover a:visited,
+.active {
+    background: #643a79;
+    border-radius: .2rem;
+}
+
+/*-- STICKY NAVIGATION --*/
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(120, 80, 156, 0.9);
+    padding: 1.5rem;
+    z-index: 2;
+}
+.sticky .logo {
+    margin: 0;
+}
+.sticky .main-nav {
+    margin-top: .9rem;
+}
+.sticky .mobile-menu span {
+    margin: 0;
+    font-size: 3.5rem;
+}
+.hero-text-box {
+    width: 70%;
+    text-align: center;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    display: block;
+}
+.btn-hero:link,
+.btn-hero:visited {
+    background: #eb7d4b;
+    border-color: #c86a40;
+}
+
+/*--  MOBILE MENU --*/
+.mobile-menu span {
+    display: none;
+}
+.mobile-menu span {
+    color: #fff;
+    font-size: 4rem;
+    float: right;
+    margin-top: 2rem;
+}
+.mobile-menu span:hover {
+    cursor: pointer;
+}
+.menu-container {
+    width: 0;
+    height: 100%;
+    z-index: 5;
+    background: rgba(0,0,0,.9);
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+}
+.menu-container .close-btn {
+    color: #fff;
+    font-size: 5rem;
+    float: right;
+    margin: 1.3rem 3.2rem;
+    cursor: pointer;
+}
+.overlay-content {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+.overlay-content a {
+    display: block;
+    color: #fff;
+    font-size: 3rem;
+    text-transform: uppercase;
+    margin: 1rem 0;
+}
+.overlay-content a:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/*==========================
+    3. SERVICES
+==========================*/
+#services {
+    color: #fff;
+    text-align: center;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(23, 194, 164, 0.95)), to(rgba(23, 194, 164, 0.95))),url(img/services-bg.jpg) no-repeat center top / cover fixed;
+    background: linear-gradient(rgba(23, 194, 164, 0.95), rgba(23, 194, 164, 0.95)),url(img/services-bg.jpg) no-repeat center top / cover fixed;
+}
+#services h2::after {
+    background: #14a58c;
+}
+.grid-services-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+.grid-services-items {
+    padding: 4rem 4rem 0;
+}
+.services-icon {
+    height: 12rem;
+    margin-bottom: 3rem;
+}
+
+/*==========================
+    4. TEAM
+==========================*/
+#team {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(231, 241, 248, 0.95)), to(rgba(231, 241, 248, 0.95))), url(img/team-bg.jpg) no-repeat center top/ cover fixed;
+    background: linear-gradient(rgba(231, 241, 248, 0.95), rgba(231, 241, 248, 0.95)), url(img/team-bg.jpg) no-repeat center top/ cover fixed;
+    text-align: center;
+}
+#team h2 {
+    color: #3c4761;
+}
+#team h2::after {
+    background: #c8d9e5;
+}
+.grid-team-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+.grid-team-items {
+    margin-top: 3rem;
+    padding: 0 3rem;
+}
+.team-img {
+    height: 20rem;
+    width: 20rem;
+    margin: auto;
+    display: block;
+    border-radius: 50%;
+}
+#team h4 {
+    margin: 0;
+    margin-top: 4rem;
+    color: #27283d;
+}
+.role {
+    color: #30bae7;
+    font-size: 1.6rem;
+}
+.grid-team-items p {
+    margin: 2rem 0;
+}
+.social-icons ul li {
+    display: inline-block;
+    margin: 0 .5rem;
+}
+.social-icons ion-icon {
+    font-size: 2rem;
+    color: #fff;
+    padding: .8rem;
+    background: #bdd1df;
+    border-radius: 2rem;
+    -webkit-transition: .7s;
+    transition: .7s;
+}
+.social-icons ion-icon:hover {
+    background: #393939;
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+/*==========================
+    5. SKILL
+==========================*/
+#skill {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.9)), to(rgba(255, 255, 255, 0.9))), url(img/skill-bg.jpg) no-repeat center / cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url(img/skill-bg.jpg) no-repeat center / cover;
+    text-align: center;
+    color: #3c4761;
+}
+#skill h2,
+#skill h4 {
+   color: #3c4761; 
+}
+#skill h2:after {
+    background: #dfe8ed;
+}
+.grid-skill-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+svg.radial-progress circle {
+    stroke-width: 5;
+}
+svg.radial-progress text {
+    font-size: 1.6rem;
+    fill: #3c4761;
+}
+svg.web-design circle {
+    stroke: #30bae7;
+}
+svg.html-css circle {
+    stroke: #d74680;
+}
+svg.graphic-design circle {
+    stroke: #15c7a8;
+}
+svg.ui-ux circle {
+    stroke: #eb7d4b;
+}
+
+/*==========================
+    6. PORTFOLIO
+==========================*/
+#portfolio {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 221, 153, 0.95)), to(rgba(255, 221, 153, 0.95))), url(img/portfolio-bg.jpg) no-repeat center top/ cover fixed;
+    background: linear-gradient(rgba(255, 221, 153, 0.95), rgba(255, 221, 153, 0.95)), url(img/portfolio-bg.jpg) no-repeat center top/ cover fixed;
+}
+#portfolio h2 {
+    color: #393939;
+}
+#portfolio h2::after {
+    background: #e5c37f;
+}
+.portfolio-filter {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+.portfolio-filter button {
+    padding: .7rem 2rem;
+    margin: .4rem;
+    font-size: 1.8rem;
+    border: 0;
+    outline: 0;
+    border-radius: .3rem;
+    background: #ebc985;
+    text-transform: uppercase;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
+.portfolio-filter button:hover,
+.portfolio-filter .mixitup-control-active {
+    background: #fff;
+}
+.grid-portfolio-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2rem;
+}
+.work-info p {
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 2.5rem 0 4.5rem;
+}
+.portfolio-btn {
+    text-align: center;
+}
+.portfolio-btn .btn:link,
+.portfolio-btn .btn:visited {
+    background: #17c1a3;
+    border-color: #14a48b;
+    display: inline-block;
+}
+
+/*==========================
+    7. TESTIMONIAL
+==========================*/
+#testimonial {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(215, 70, 128, 0.9)), to(rgba(215, 70, 128, 0.9))), url(img/testimonial-bg.jpg) no-repeat center / cover fixed;
+    background: linear-gradient(rgba(215, 70, 128, 0.9), rgba(215, 70, 128, 0.9)), url(img/testimonial-bg.jpg) no-repeat center / cover fixed;
+    color: #fff;
+}
+#testimonial h2::after {
+    background: #b73c6d;
+}
+#testimonial .title-description {
+    color: #fff;
+    text-align: center;
+    display: inline-block;
+}
+.grid-testiomial-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 4rem;
+    grid-row-gap: 8rem;
+}
+.nested-grid-testimonial-container {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.nested-grid-testimonial-items img {
+    width: 12rem;
+    height: 12rem;
+    border-radius: 50%;
+}
+.nested-grid-testimonial-items p {
+    font-size: 2rem;
+    font-style: italic;
+    width: 90%;
+}
+#testimonial h4 {
+    margin: 0;
+}
+#testimonial span {
+    font-size: 1.8rem;
+    color: #ffdd99;
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+/*==========================
+    8. CONTACT
+==========================*/
+#contact {
+    background: ;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(60, 84, 153, 0.9)), to(rgba(60, 84, 153, 0.9))), url(img/contact-bg.jpg) no-repeat center / cover;
+    background: linear-gradient(rgba(60, 84, 153, 0.9), rgba(60, 84, 153, 0.9)), url(img/contact-bg.jpg) no-repeat center / cover;
+    text-align: center;
+}
+#contact h2::after {
+    background: #273a71;
+}
+#contact p {
+    color: #fff;
+}
+.contact-form {
+    width: 75%;
+    margin: 0 auto;
+}
+.grid-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1.5rem;
+}
+.single-form input[type="text"],
+.single-form input[type="email"],
+.single-form textarea {
+    width: 100%;
+    padding: 1.3rem;
+    margin: .8rem 0;
+    font-size: 1.8rem;
+    border-radius: .5rem;
+    border: 0;
+    background: #273a71;
+    color: #fbfbfb;
+}
+.single-form input[type="text"]:focus,
+.single-form input[type="email"]:focus,
+.single-form textarea:focus {
+    outline: 0;
+}
+.single-form input::-webkit-input-placeholder,
+.single-form textarea::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+.single-form input:-ms-input-placeholder,
+.single-form textarea:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+.single-form input::placeholder,
+.single-form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+.single-form-btn input {
+    background: #30bae7;
+    border: 0;
+    border-bottom: .5rem solid #299ec5;
+}
+
+/*==========================
+    9. FOOTER
+==========================*/
+footer {
+    background: #344b8e;
+    padding: 6rem 0;
+    text-align: center;
+}
+footer ul li {
+    display: inline-block;
+    font-size: 2.4rem;
+    margin: .5rem 2rem;
+}
+footer a {
+    color: #fff;
+}
+footer a:hover {
+    color: #30bae7;
+}
